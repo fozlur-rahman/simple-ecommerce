@@ -1,0 +1,30 @@
+.header{
+    max-width: 100%;
+    background: rgb(1, 1, 53);
+}
+.nav-bar {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 0px 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.menu a:hover{
+    color: #FF9900;
+    transition: .5s;
+}

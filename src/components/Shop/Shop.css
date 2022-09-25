@@ -1,0 +1,27 @@
+.shop-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+.products-container{
+    max-width: 80%;
+    margin: 70px auto;
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+.cart-container{
+    background: #FFE0B3;
+    padding: 25px;
+    height: 100vh;
+}
+.cart-deatils{
+    text-align: left;
+}
+.cart-deatils button {
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}

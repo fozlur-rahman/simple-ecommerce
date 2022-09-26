@@ -22,7 +22,7 @@ const Shop = () => {
         // console.log(storesCart);
         for (const id in storesCart) {
             const addedProducts = products.find(product => product.id === id);
-            console.log(addedProducts);
+            // console.log(addedProducts);
             if (addedProducts) {
                 const quantity = storesCart[id];
                 addedProducts.quantity = quantity;
@@ -32,10 +32,22 @@ const Shop = () => {
         setCart(saveCart);
     }, [products])
 
-    const handleAddToCart = (product) => {
-        const newCart = [...cart, product];
+    const handleAddToCart = (selectedProduct) => {
+        console.log(selectedProduct)
+        let newCart = [];
+        const exists = cart.find(product => product.id === selectedProduct.id);
+        if (!exists) {
+            selectedProduct.quantity = 1;
+            newCart = [...cart, selectedProduct];
+
+        }
+        else {
+            const rest = cart.filter(product => product.id !== selectedProduct.id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, exists];
+        }
         setCart(newCart);
-        addToDb(product.id);
+        addToDb(selectedProduct.id);
         // console.log(newCart);
     }
     return (

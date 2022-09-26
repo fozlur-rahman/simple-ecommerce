@@ -15,7 +15,7 @@ const Cart = (props) => {
     const tax = (total * 0.1).toFixed(2);
     const grandToatal = parseFloat(total + shipping + parseFloat(tax));
 
-    console.log(cart);
+    // console.log(cart);
     return (
         <div>
             <h3>Order summery</h3>

@@ -9,7 +9,13 @@ const Product = (props) => {
     const { name, price, img, seller, rating } = product;
     return (
         <div className='product-card'>
-            <img src={img} alt="" />
+            <img
+                src={img}
+                alt=""
+                onError={(e) => {
+                    e.currentTarget.src = "https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=900&t=st=1664211635~exp=1664212235~hmac=e1dad493f988c194206294f1e039f7a4df5224394a0b610b1690d8b60899ed97";
+                }}
+            />
             <div className='product-details'>
                 <h3>{name}</h3>
                 <p>Price: {price}</p>

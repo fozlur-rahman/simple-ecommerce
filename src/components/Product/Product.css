@@ -21,6 +21,7 @@
     padding: 10px 0;
     position: absolute;
     bottom: 0;
+    cursor: pointer;
 }
 .add-btn:hover{
     background: #FF9900;

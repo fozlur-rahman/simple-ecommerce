@@ -4,17 +4,27 @@ import { faRightLong, faRemove } from '@fortawesome/free-solid-svg-icons';
 
 const Cart = (props) => {
     const { cart } = props;
-    // const { price } = cart;
+    // for totol calculation 
+    let total = 0;
+    let shipping = 0;
+
+    for (const product of cart) {
+        total = total + product.price;
+        shipping = shipping + product.shipping;
+    }
+    const tax = (total * 0.1).toFixed(2);
+    const grandToatal = parseFloat(total + shipping + parseFloat(tax));
+
     console.log(cart);
     return (
         <div>
             <h3>Order summery</h3>
             <div className='cart-deatils'>
                 <p>Select Items: {cart.length}</p>
-                {/* <p>Total price: {price}</p> */}
-                <p>Total Shipping Charge:</p>
-                <p>tax: </p>
-                <h5>Grand Tota: </h5>
+                <p>Total price: $ {total}</p>
+                <p>Total Shipping Charge: $ {shipping}</p>
+                <p>tax: ${tax}</p>
+                <h5>Grand Tota: $ {grandToatal.toFixed(2)}</h5>
                 <button style={{ background: '#FF3030' }}>Clear Cart <FontAwesomeIcon icon={faRemove}></FontAwesomeIcon>  </button>
                 <button style={{ background: '#FF9900' }}>Preview order <FontAwesomeIcon icon={faRightLong}></FontAwesomeIcon> </button>
             </div>

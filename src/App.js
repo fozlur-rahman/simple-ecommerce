@@ -8,7 +8,7 @@ function App() {
       <Header></Header>
       <Shop></Shop>
     </div>
-  );git
+  );
 }
 
 export default App;
